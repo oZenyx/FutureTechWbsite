@@ -1,66 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ICT Productivity & Design Quiz</title>
-    <style>
-        body {
-            background-color: blanchedalmond;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<title>ICT Productivity & Design Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .quiz-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #d2b48c;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
+<style>
 
-        h1, h2 {
-            color: #5d4037;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .question {
-            font-weight: bold;
-            margin-top: 15px;
-            color: #333;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: blanchedalmond;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #deb887;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-        }
+/* ================= HEADER ================= */
 
-        button:hover {
-            background-color: #cd853f;
-        }
+.header-box {
+    background-color: #5d4037;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .result-text {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #2e8b57;
-        }
+.header-box h1 {
+    margin: 0;
+}
 
-        .lesson-summary {
-            font-style: italic;
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 10px;
-        }
-    </style>
+.home-btn {
+    padding: 10px 18px;
+    background-color: #deb887;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.home-btn:hover {
+    background-color: #cd853f;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-container {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ================= QUIZ BOX ================= */
+
+.quiz-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #d2b48c;
+    width: 100%;
+}
+
+h2 {
+    color: #5d4037;
+}
+
+.question {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #deb887;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #cd853f;
+}
+
+.result-text {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2e8b57;
+}
+
+.lesson-summary {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1> ICT Quizzes </h1>
+<!-- HEADER -->
+<div class="header-box">
+    <h1>ICT Quizzes</h1>
+    <a href="index.html">
+        <button class="home-btn">Homepage</button>
+    </a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-container">
 
 <div class="quiz-box" id="Quiz1">
     <h2>Quiz 1: Web & AI Evolution</h2>
@@ -102,24 +160,24 @@
     <p id="result2" class="result-text"></p>
 </div>
 
-<hr>
+</div>
 
 <script>
-    function checkQuiz1() {
-        let score = 0;
-        if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
-        if (document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
-        document.getElementById("result1").innerHTML = "Score: " + score + "/2";
-    }
+function checkQuiz1() {
+    let score = 0;
+    if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+    document.getElementById("result1").innerHTML = "Score: " + score + "/2";
+}
 
-    function checkQuiz2() {
-        let score = 0;
-        if (document.querySelector('input[name="p1"]:checked')?.value === "b") score++;
-        if (document.querySelector('input[name="p2"]:checked')?.value === "b") score++;
-        if (document.querySelector('input[name="p3"]:checked')?.value === "b") score++;
-        if (document.querySelector('input[name="p4"]:checked')?.value === "b") score++;
-        document.getElementById("result2").innerHTML = "Score: " + score + "/4";
-    }
+function checkQuiz2() {
+    let score = 0;
+    if (document.querySelector('input[name="p1"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="p2"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="p3"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="p4"]:checked')?.value === "b") score++;
+    document.getElementById("result2").innerHTML = "Score: " + score + "/4";
+}
 </script>
 
 </body>
